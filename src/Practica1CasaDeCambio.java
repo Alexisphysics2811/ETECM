@@ -7,10 +7,7 @@
 //Lib
 import java.awt.*;
 import java.awt.event.*;
-import java.util.concurrent.Flow;
-
 import javax.swing.*;
-
 
 public class Practica1CasaDeCambio extends JFrame implements ActionListener {
     
@@ -18,7 +15,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
     private JTextField textFieldAmount, textFieldRate, textFieldResult;
     private JButton buttonCalculate, buttonClear, buttonExit;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
         demo.setSize(750, 500);
         demo.createGUI();
@@ -45,7 +42,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
         textFieldResult = new JTextField(10);
         textFieldResult.setBounds(9,10,30,30);
         textFieldResult.setEditable(false);
-        textFieldAmount.setEnabled(false);
+        textFieldResult.setEnabled(false);
         window.add(textFieldResult);
 
         buttonCalculate = new JButton("Calculate");
@@ -68,21 +65,21 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
         Object origin = e.getSource();
         if (origin == buttonCalculate) {
             String stringAmount, stringRate, stringResult;
-            int Amount, Rate, Result;
+            float Amount, Rate, Result;
 
             stringAmount = textFieldAmount.getText();
             stringRate = textFieldRate.getText();
-            Amount = Integer.parseInt(stringAmount);
-            Rate = Integer.parseInt(stringRate);
+            Amount = Float.parseFloat(stringAmount);
+            Rate = Float.parseFloat(stringRate);
 
             Result = Amount*Rate;
-            StringResult = String.parseString(Result);
-            textFieldResult.setText(Result);
-
+            stringResult = String.valueOf(Result);
+            textFieldResult.setText(stringResult);
         }
         else if (origin == buttonClear) {
             textFieldAmount.setText("");
             textFieldRate.setText("");
+            textFieldResult.setText("");
         }
         else if (origin == buttonExit) {
             System.exit(0);
