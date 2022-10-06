@@ -67,7 +67,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object origin = e.getSource();
         if (origin == buttonCalculate) {
-            String stringAmount, stringRate;
+            String stringAmount, stringRate, stringResult;
             int Amount, Rate, Result;
 
             stringAmount = textFieldAmount.getText();
@@ -76,6 +76,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
             Rate = Integer.parseInt(stringRate);
 
             Result = Amount*Rate;
+            StringResult = String.parseString(Result);
             textFieldResult.setText(Result);
 
         }
