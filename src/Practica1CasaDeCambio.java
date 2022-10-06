@@ -17,7 +17,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
-        demo.setSize(750, 500);
+        demo.setSize(650, 500);
         demo.createGUI();
         demo.setTitle("Currency Converter");
         demo.setVisible(true);
