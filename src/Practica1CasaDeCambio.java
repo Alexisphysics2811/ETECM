@@ -15,7 +15,7 @@ import javax.swing.*;
 public class Practica1CasaDeCambio extends JFrame implements ActionListener {
     
     private JLabel labelWelcome;
-    private JTextField textFieldAmount, textFieldRate;
+    private JTextField textFieldAmount, textFieldRate, textFieldResult;
     private JButton buttonCalculate, buttonClear, buttonExit;
 
     public static void main(String[] args) throws Exception {
@@ -42,6 +42,12 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
         textFieldRate.setBounds(9,10,30,30);
         window.add(textFieldRate);
 
+        textFieldResult = new JTextField(10);
+        textFieldResult.setBounds(9,10,30,30);
+        textFieldResult.setEditable(false);
+        textFieldAmount.setEnabled(false);
+        window.add(textFieldResult);
+
         buttonCalculate = new JButton("Calculate");
         buttonCalculate.setBounds(2,40,30,30);
         window.add(buttonCalculate);
@@ -56,5 +62,29 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
         buttonExit.setBounds(2,40,30,30);
         window.add(buttonExit);
         buttonExit.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        Object origin = e.getSource();
+        if (origin == buttonCalculate) {
+            String stringAmount, stringRate;
+            int Amount, Rate, Result;
+
+            stringAmount = textFieldAmount.getText();
+            stringRate = textFieldRate.getText();
+            Amount = Integer.parseInt(stringAmount);
+            Rate = Integer.parseInt(stringRate);
+
+            Result = Amount*Rate;
+            textFieldResult.setText(Result);
+
+        }
+        else if (origin == buttonClear) {
+            textFieldAmount.setText("");
+            textFieldRate.setText("");
+        }
+        else if (origin == buttonExit) {
+            System.exit(0);
+        }
     }
 }
