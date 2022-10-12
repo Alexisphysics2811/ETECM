@@ -8,24 +8,23 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.undo.StateEditable;
 
 
 public class Practica2CalculoDeSueldos extends JFrame implements ActionListener {
     
     private JLabel labelWelcome;
-    private JTextField textFieldDaily, textFieldAbsenceCount, textFieldOutput;
+    private JTextField textFieldDaily, textFieldAbsence, textFieldOutput;
     private JButton buttonCalculate, buttonClear, buttonExit;
 
     public static void main(String[] args) {
         Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
         demo.setSize(650, 500);
-        demo.createGUI();
+        demo.createGUIP2();
         demo.setTitle("Salary Calculator");
         demo.setVisible(true);
     }
 
-    private void createGUI() {
+    private void createGUIP2() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Container window = getContentPane();
         window.setLayout(new FlowLayout());
@@ -37,9 +36,9 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
         textFieldDaily.setBounds(9,10,30,30);
         window.add(textFieldDaily);
 
-        textFieldAbsenceCount = new JTextField(10);
-        textFieldAbsenceCount.setBounds(9,10,30,30);
-        window.add(textFieldAbsenceCount);
+        textFieldAbsence = new JTextField(10);
+        textFieldAbsence.setBounds(9,10,30,30);
+        window.add(textFieldAbsence);
 
         textFieldOutput = new JTextField(10);
         textFieldOutput.setBounds(9,10,30,30);
@@ -66,20 +65,45 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
         if (o == buttonCalculate) {
-            String stringDaily, stringAbsense, stringOutput;
-            float Daily, Absense, Output;
+            String stringDaily, stringAbsence, stringOutput;
+            float Daily, Output;
+            int Absence;
 
             stringDaily = textFieldDaily.getText();
-            stringAbsense = textFieldAbsense.getText();
+            stringAbsence = textFieldAbsence.getText();
             Daily = Float.parseFloat(stringDaily);
-            Absense = Float.parseFloat(stringAbsense);
-            Output = Float.parseFloat(stringOutput);
+            Absence = Integer.parseInt(stringAbsence);
+            Output = 0;
 
-            
+            if (Daily*30 <=6500) {
+                Output = (Daily + 50)*7 + 200;
+                if (Absence == 0) {
+                    Output = Output + (Output/100)*12;
+                }
+                else if (0 < Absence) {
+                    Output = Output - (Output/7)*Absence;
+                }
+                Output = Output + (Output/100)*5;
+                Output = Output - (Output/100)*7;
+            }
+
+            else if (Daily*30 > 6500) {
+                Output = Daily*15;
+                Output = Output + (Output/100)*13 + (Output/100)*15;
+                if (0 < Absence) {
+                    Output = Output - (Output/7)*Absence;
+                }
+                Output = Output + (Output/100)*5;
+                Output = Output - (Output/100)*7;
+            }
+
+            stringOutput = String.valueOf(Output);
+            textFieldOutput.setText(stringOutput);
+
         }
         else if (o == buttonClear) {
             textFieldDaily.setText("");
-            textFieldAbsenceCount.setText("");
+            textFieldAbsence.setText("");
             textFieldOutput.setText("");
         }
         else if (o == buttonExit) {

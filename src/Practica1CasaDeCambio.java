@@ -20,12 +20,12 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
     public static void main(String[] args) {
         Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
         demo.setSize(750, 500);
-        demo.createGUI();
+        demo.createGUIP1();
         demo.setTitle("Currency Converter");
         demo.setVisible(true);
     }
 
-    private void createGUI() {
+    void createGUIP1() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Container window = getContentPane();
         window.setLayout(new FlowLayout());
