@@ -2,6 +2,8 @@
 *Program: Practica1CasaDeCambio.java
 *Author: Alexis Rabago
 *Date: 30/10/2022
+*Notes: La prescencia de botones de direccion de cambio es redundante ya que es facilmente reemplazada por la tasa
+*de cambio variable que proporciona el usuario. Ejemplo: USD y MXN 20.00/0.05
 ***/
 
 //Lib
@@ -17,7 +19,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
-        demo.setSize(650, 500);
+        demo.setSize(750, 500);
         demo.createGUI();
         demo.setTitle("Currency Converter");
         demo.setVisible(true);
@@ -28,7 +30,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
         Container window = getContentPane();
         window.setLayout(new FlowLayout());
 
-        labelWelcome = new JLabel("Welcome! Please enter the the amount of currency you want to convert and the conversion rate.\n");
+        labelWelcome = new JLabel("Bienvenido! Por favor introduzca en los siguientes campos la cantidad a convertir y la tasa de cambio (el orden es irrelevante)\n");
         window.add(labelWelcome);
 
         textFieldAmount = new JTextField(10);
