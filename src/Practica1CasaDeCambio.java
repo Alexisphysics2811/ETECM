@@ -47,17 +47,17 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
         textFieldResult.setEnabled(false);
         window.add(textFieldResult);
 
-        buttonCalculate = new JButton("Calculate");
+        buttonCalculate = new JButton("Calcular");
         buttonCalculate.setBounds(2,40,30,30);
         window.add(buttonCalculate);
         buttonCalculate.addActionListener(this);
         
-        buttonClear = new JButton("Clear");
+        buttonClear = new JButton("Limpiar");
         buttonClear.setBounds(2,40,30,30);
         window.add(buttonClear);
         buttonClear.addActionListener(this);
 
-        buttonExit = new JButton("Exit");
+        buttonExit = new JButton("Salir");
         buttonExit.setBounds(2,40,30,30);
         window.add(buttonExit);
         buttonExit.addActionListener(this);

@@ -47,17 +47,17 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
         textFieldOutput.setEnabled(false);
         window.add(textFieldOutput);
 
-        buttonCalculate = new JButton("Calculate");
+        buttonCalculate = new JButton("Calcular");
         buttonCalculate.setBounds(2, 40, 30, 30);
         buttonCalculate.addActionListener(this);
         window.add(buttonCalculate);
 
-        buttonClear = new JButton("Clear");
+        buttonClear = new JButton("Limpiar");
         buttonClear.setBounds(2, 40, 30, 30);
         buttonClear.addActionListener(this);
         window.add(buttonClear);
 
-        buttonExit = new JButton("Exit");
+        buttonExit = new JButton("Salir");
         buttonExit.setBounds(2, 40, 30, 30);
         buttonExit.addActionListener(this);
         window.add(buttonExit);
