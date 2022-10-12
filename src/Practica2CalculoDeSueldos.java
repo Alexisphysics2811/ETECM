@@ -13,14 +13,14 @@ import javax.swing.*;
 public class Practica2CalculoDeSueldos extends JFrame implements ActionListener {
     
     private JLabel labelWelcome;
-    private JTextField textField;
-    private JButton button;
+    private JTextField textFieldDaily, textFieldAbsenceCount, textFieldOutput;
+    private JButton buttonCalculate, buttonClear, buttonExit;
 
     public static void main(String[] args) {
         Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
         demo.setSize(650, 500);
         demo.createGUI();
-        demo.setTitle("Currency Converter");
+        demo.setTitle("Salary Calculator");
         demo.setVisible(true);
     }
 
