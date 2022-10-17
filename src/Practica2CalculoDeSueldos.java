@@ -17,14 +17,14 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
     private JButton buttonCalculate, buttonClear, buttonExit;
 
     public static void main(String[] args) {
-        Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
+        Practica2CalculoDeSueldos demo = new Practica2CalculoDeSueldos();
         demo.setSize(650, 500);
-        demo.createGUIP2();
+        demo.createGUI();
         demo.setTitle("Salary Calculator");
         demo.setVisible(true);
     }
 
-    private void createGUIP2() {
+    private void createGUI() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Container window = getContentPane();
         window.setLayout(new FlowLayout());
