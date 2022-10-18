@@ -15,7 +15,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
     
     private JLabel labelWelcome;
     private JTextField textFieldAmount, textFieldRate, textFieldResult;
-    private JButton buttonInverter, buttonCalculate, buttonClear, buttonExit;
+    private JButton buttonCalculate, buttonClear, buttonExit;
 
     public static void main(String[] args) {
         Practica1CasaDeCambio demo = new Practica1CasaDeCambio();
@@ -46,11 +46,6 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
         textFieldResult.setEditable(false);
         textFieldResult.setEnabled(false);
         window.add(textFieldResult);
-        
-        buttonInverter = new JButton("Invertir");
-        buttonInverter.setBounds(2, 40, 30, 30);
-        window.add(buttonInverter);
-        buttonInverter.addActionListener(this);
 
         buttonCalculate = new JButton("Calcular");
         buttonCalculate.setBounds(2,40,30,30);
@@ -73,7 +68,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
 
         if (origin == buttonCalculate) {
             String stringAmount, stringRate, stringResult;
-            float Amount, Rate, Result;
+            float Amount, Rate, Result=-1;
 
             stringAmount = textFieldAmount.getText();
             stringRate = textFieldRate.getText();
