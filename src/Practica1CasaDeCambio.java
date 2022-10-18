@@ -68,7 +68,7 @@ public class Practica1CasaDeCambio extends JFrame implements ActionListener {
 
         if (origin == buttonCalculate) {
             String stringAmount, stringRate, stringResult;
-            float Amount, Rate, Result=-1;
+            float Amount, Rate, Result;
 
             stringAmount = textFieldAmount.getText();
             stringRate = textFieldRate.getText();
