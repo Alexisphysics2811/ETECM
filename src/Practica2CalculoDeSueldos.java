@@ -1,5 +1,5 @@
 /***
-*Program: Practica1CasaDeCambio.java
+*Program: Practica2CalculoDeSueldos.java
 *Author: Alexis Rabago
 *Date: 30/10/2022
 ***/
