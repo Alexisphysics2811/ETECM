@@ -76,26 +76,33 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
             Output = 0;
 
             if (Daily*30 <=6500) {
-                Output = (Daily + 50)*7 + 200;
+                JOptionPane.showMessageDialog(null, "Ayuda de transporte: +350");
+                Output = (Daily + 50)*7;
                 if (Absence == 0) {
+                    JOptionPane.showMessageDialog(null, "Bono de puntualidad: +" + (Output/100)*12);
                     Output = Output + (Output/100)*12;
                 }
                 else if (0 < Absence) {
+                    JOptionPane.showMessageDialog(null, "Descuento de faltas: -" + (Output/7)*Absence);
                     Output = Output - (Output/7)*Absence;
                 }
-                Output = Output + (Output/100)*5;
-                Output = Output - (Output/100)*7;
+                JOptionPane.showMessageDialog(null, "Vales de despensa: +200");
+                Output = Output + 200;
             }
 
             else if (Daily*30 > 6500) {
                 Output = Daily*15;
+                JOptionPane.showMessageDialog(null, "Fondo de ahorro (13%): +" + (Output/100)*13);
+                JOptionPane.showMessageDialog(null, "Vales de despensa (15%): +" + (Output/100)*15);
                 Output = Output + (Output/100)*13 + (Output/100)*15;
                 if (0 < Absence) {
                     Output = Output - (Output/7)*Absence;
                 }
-                Output = Output + (Output/100)*5;
-                Output = Output - (Output/100)*7;
             }
+            JOptionPane.showMessageDialog(null, "Impuesto del 7%: -" + (Output/100)*7);
+            Output = Output - (Output/100)*7;
+            JOptionPane.showMessageDialog(null, "SS del 5%: -" + (Output/100)*5);
+            Output = Output - (Output/100)*5;
 
             stringOutput = String.valueOf(Output);
             textFieldOutput.setText(stringOutput);
