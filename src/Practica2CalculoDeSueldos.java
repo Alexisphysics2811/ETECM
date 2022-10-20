@@ -92,8 +92,8 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
 
             else if (Daily*30 > 6500) {
                 Output = Daily*15;
-                JOptionPane.showMessageDialog(null, "Fondo de ahorro (13%): +" + (Output/100)*13);
-                JOptionPane.showMessageDialog(null, "Vales de despensa (15%): +" + (Output/100)*15);
+                JOptionPane.showMessageDialog(null, "Fondo de ahorro: +" + (Output/100)*13);
+                JOptionPane.showMessageDialog(null, "Vales de despensa: +" + (Output/100)*15);
                 Output = Output + (Output/100)*13 + (Output/100)*15;
                 if (0 < Absence) {
                     Output = Output - (Output/7)*Absence;
