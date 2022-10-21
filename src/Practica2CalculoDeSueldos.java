@@ -75,14 +75,14 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
             Absence = Integer.parseInt(stringAbsence);
             Output = 0;
 
-            if (Daily*30 <=6500) {
+            if (Daily*7 <= 6500) {
                 JOptionPane.showMessageDialog(null, "Ayuda de transporte: +350");
                 Output = (Daily + 50)*7;
                 if (Absence == 0) {
                     JOptionPane.showMessageDialog(null, "Bono de puntualidad: +" + (Output/100)*12);
                     Output = Output + (Output/100)*12;
                 }
-                else if (0 < Absence) {
+                else if (Absence > 0) {
                     JOptionPane.showMessageDialog(null, "Descuento de faltas: -" + (Output/7)*Absence);
                     Output = Output - (Output/7)*Absence;
                 }
@@ -90,7 +90,7 @@ public class Practica2CalculoDeSueldos extends JFrame implements ActionListener 
                 Output = Output + 200;
             }
 
-            else if (Daily*30 > 6500) {
+            else if (Daily*7 > 6500) {
                 Output = Daily*15;
                 JOptionPane.showMessageDialog(null, "Fondo de ahorro: +" + (Output/100)*13);
                 JOptionPane.showMessageDialog(null, "Vales de despensa: +" + (Output/100)*15);
