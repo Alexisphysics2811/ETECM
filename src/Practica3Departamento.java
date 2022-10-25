@@ -18,9 +18,9 @@ public class Practica3Departamento extends JFrame implements ActionListener {
 
    public static void main(String[] args) {
       Practica3Departamento demo = new Practica3Departamento ();
-      demo.setSize(1200, 600);
+      demo.setSize(1300, 700);
       demo.createGUI();
-      demo.setTitle("Postes #69");
+      demo.setTitle("Building Information");
       demo.setVisible(true);
    }
 
@@ -30,11 +30,11 @@ public class Practica3Departamento extends JFrame implements ActionListener {
       window.setLayout(new FlowLayout());
 
       panelBlueprint = new JPanel();
-      panelBlueprint.setPreferredSize(new Dimension(500,500));
+      panelBlueprint.setPreferredSize(new Dimension(600,600));
       window.add(panelBlueprint);
 
       panelInfo = new JPanel();
-      panelInfo.setPreferredSize(new Dimension(500,500));
+      panelInfo.setPreferredSize(new Dimension(600,600));
       window.add(panelInfo);
 
       labelWelcome = new JLabel("Blueprint and Information of the building: ");
@@ -75,9 +75,13 @@ public class Practica3Departamento extends JFrame implements ActionListener {
    }
 
    private void DrawBlueprint(Graphics canvas, int x, int y) {
-      canvas.drawRect(x, y, 400, 150); //Main
+      canvas.drawRect(x, y, 500, 150); //Main
       canvas.drawRect(x, y, 50, 50); //Lightcube
       canvas.drawRect(x+50, y, 75, 50); //Bathroom1
       canvas.drawRect(x, y+50, 125, 100); //Bedroom1
+      canvas.drawRect(x+150, y, 225, 25); //Stairs
+      canvas.drawRect(x+375, y, 75, 50); //Kitchen
+      canvas.drawRect(x+450, y, 50, 50); //Bathroom2
+      canvas.drawRect(x+375, y+50, 125, 100); //Bedroom2
    }
 }
