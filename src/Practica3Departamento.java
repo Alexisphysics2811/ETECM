@@ -17,7 +17,7 @@ public class Practica3Departamento extends JFrame implements ActionListener {
    private JPanel panelBlueprint, panelInfo;
 
    public static void main(String[] args) {
-      Practica3Departamento demo = new Practica3Departamento ();
+      Practica3Departamento demo = new Practica3Departamento();
       demo.setSize(1300, 700);
       demo.createGUI();
       demo.setTitle("Building Information");
