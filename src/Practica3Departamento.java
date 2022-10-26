@@ -92,5 +92,9 @@ public class Practica3Departamento extends JFrame implements ActionListener {
       canvas.drawString("Neighborhood: New Mill", x, y+100);
       canvas.drawString("Area: 750m^2", x, y+150);
       canvas.drawString("Services: Piped water, electricity 24/7, drain system",x,y+200);
+      canvas.drawString("Base Price: $75,000.00 USD\n", x, y+250);
+      canvas.drawString("Deed: $4,500.00 USD\n", x, y+275);
+      canvas.drawString("Down Payment: $7,500.00 USD\n", x, y+300);
+      canvas.drawString("Total Price: $87,000.00 USD\n", x, y+325);
    }
 }
