@@ -20,7 +20,7 @@ public class Practica3Departamento extends JFrame implements ActionListener {
       Practica3Departamento demo = new Practica3Departamento();
       demo.setSize(1300, 700);
       demo.createGUI();
-      demo.setTitle("Building Information");
+      demo.setTitle("Dirac Ave. #87");
       demo.setVisible(true);
    }
 
@@ -62,9 +62,10 @@ public class Practica3Departamento extends JFrame implements ActionListener {
       if (o == buttonInitialize) {
          String buildingDatabaseName;
          buildingDatabaseName = textFieldInput.getText();
-         if ("Postes #69".equals(buildingDatabaseName)) {
+         if ("Dirac Ave. #87".equals(buildingDatabaseName)) {
             JOptionPane.showMessageDialog(null, "Building found in database, displaying...");
             DrawBlueprint(canvasBlueprint, 50, 200);
+            DrawInfo(canvasInfo, 50, 50);
          }
          else {
             JOptionPane.showMessageDialog(null, "Couldn't find the requested building in the database.");
@@ -83,5 +84,13 @@ public class Practica3Departamento extends JFrame implements ActionListener {
       canvas.drawRect(x+375, y, 75, 50); //Kitchen
       canvas.drawRect(x+450, y, 50, 50); //Bathroom2
       canvas.drawRect(x+375, y+50, 125, 100); //Bedroom2
+   }
+
+   private void DrawInfo(Graphics canvas, int x, int y){
+      canvas.drawString("Inmobililary: Arcturus Homes", x, y);
+      canvas.drawString("Seller: Chris Robinson", x, y+50);
+      canvas.drawString("Neighborhood: New Mill", x, y+100);
+      canvas.drawString("Area: 750m^2", x, y+150);
+      canvas.drawString("Services: Piped water, electricity 24/7, drain system",x,y+200);
    }
 }
