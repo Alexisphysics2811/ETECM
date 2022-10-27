@@ -45,7 +45,7 @@ public class Ejemplo6ColoresRGB extends JFrame
         papel.setColor (guinda);
         papel.fill3DRect(100, 200, 100, 100,true);
         papel.fillRoundRect(MAXIMIZED_BOTH, ERROR, ABORT, ABORT, FRAMEBITS, FRAMEBITS);
-        //papel.drawRect(25, 25, 100, 100);
-        //papel.drawRoundRect(20, 6, 140, 89, 10, 20);
+        papel.drawRect(25, 25, 100, 100);
+        papel.drawRoundRect(20, 6, 140, 89, 10, 20);
     } 
 }

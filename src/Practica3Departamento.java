@@ -77,13 +77,21 @@ public class Practica3Departamento extends JFrame implements ActionListener {
 
    private void DrawBlueprint(Graphics canvas, int x, int y) {
       canvas.drawRect(x, y, 500, 150); //Main
+      canvas.drawString("Living Room", x+220, y+85);
       canvas.drawRect(x, y, 50, 50); //Lightcube
+      canvas.drawString("Lightcube", x, y+30);
       canvas.drawRect(x+50, y, 75, 50); //Bathroom1
+      canvas.drawString("Bathroom", x+62, y+30);
       canvas.drawRect(x, y+50, 125, 100); //Bedroom1
+      canvas.drawString("Bedroom", x+37, y+105);
       canvas.drawRect(x+150, y, 225, 25); //Stairs
+      canvas.drawString("Stairs", x+237, y+17);
       canvas.drawRect(x+375, y, 75, 50); //Kitchen
+      canvas.drawString("Kitchen", x+394, y+30);
       canvas.drawRect(x+450, y, 50, 50); //Bathroom2
+      canvas.drawString("Bathroom", x+450, y+30);
       canvas.drawRect(x+375, y+50, 125, 100); //Bedroom2
+      canvas.drawString("Bedroom", x+412, y+105);
    }
 
    private void DrawInfo(Graphics canvas, int x, int y){
@@ -95,6 +103,9 @@ public class Practica3Departamento extends JFrame implements ActionListener {
       canvas.drawString("Base Price: $75,000.00 USD\n", x, y+250);
       canvas.drawString("Deed: $4,500.00 USD\n", x, y+275);
       canvas.drawString("Down Payment: $7,500.00 USD\n", x, y+300);
-      canvas.drawString("Total Price: $87,000.00 USD\n", x, y+325);
+      canvas.drawString("Subtotal: $87,000.00 USD\n", x, y+325);
+      canvas.drawString("Bathroom Installation: +$250.00 USD per", x, y+375);
+      canvas.drawString("Garage Door Installation: +$500.00 USD", x, y+400);
+      canvas.drawString("Total Price: $88,000.00 USD", x, y+450);
    }
 }
