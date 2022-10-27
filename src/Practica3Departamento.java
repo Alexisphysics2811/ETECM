@@ -64,8 +64,8 @@ public class Practica3Departamento extends JFrame implements ActionListener {
          buildingDatabaseName = textFieldInput.getText();
          if ("Dirac Ave. #87".equals(buildingDatabaseName)) {
             JOptionPane.showMessageDialog(null, "Building found in database, displaying...");
-            DrawBlueprint(canvasBlueprint, 50, 200);
-            DrawInfo(canvasInfo, 50, 50);
+            drawBlueprint(canvasBlueprint, 50, 200);
+            drawInfo(canvasInfo, 50, 50);
          }
          else {
             JOptionPane.showMessageDialog(null, "Couldn't find the requested building in the database.");
@@ -75,7 +75,7 @@ public class Practica3Departamento extends JFrame implements ActionListener {
 
    }
 
-   private void DrawBlueprint(Graphics canvas, int x, int y) {
+   private void drawBlueprint(Graphics canvas, int x, int y) {
       canvas.drawRect(x, y, 500, 150); //Main
       canvas.drawString("Living Room", x+220, y+85);
       canvas.drawRect(x, y, 50, 50); //Lightcube
@@ -94,7 +94,7 @@ public class Practica3Departamento extends JFrame implements ActionListener {
       canvas.drawString("Bedroom", x+412, y+105);
    }
 
-   private void DrawInfo(Graphics canvas, int x, int y){
+   private void drawInfo(Graphics canvas, int x, int y){
       canvas.drawString("Inmobililary: Arcturus Homes", x, y);
       canvas.drawString("Seller: Chris Robinson", x, y+50);
       canvas.drawString("Neighborhood: New Mill", x, y+100);
