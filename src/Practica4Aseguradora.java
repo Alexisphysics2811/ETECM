@@ -26,7 +26,7 @@ public class Practica4Aseguradora extends JFrame implements ActionListener {
     }
 
     private void createGUI() {
-        setDefaultCloseOperation(ABORT);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         Container window = getContentPane();
         window.setLayout(new FlowLayout());
 
@@ -66,5 +66,30 @@ public class Practica4Aseguradora extends JFrame implements ActionListener {
         buttonCarInsurance.setBounds(2, 40, 30, 30);
         buttonCarInsurance.addActionListener(this);
         window.add(buttonCarInsurance);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        Object o = e.getSource();
+        int insuranceCost = 10000;
+        int insuranceCostPercentile = 100;
+        if (o == buttonLifeInsurance){
+            Object[] lifeInsuranceOptions = {"Minor", "Adult Woman", "Adult Man"};
+            int lifeInsuranceOptionsIndex = JOptionPane.showOptionDialog(null, "Select the correspondant option: \n Is the interested a ...", "Life Insurance", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, lifeInsuranceOptions, lifeInsuranceOptions[0]);
+            String lifeInsuranceOptionsOutput = lifeInsuranceOptions[lifeInsuranceOptionsIndex].toString();
+            if ("Minor".equals(lifeInsuranceOptionsOutput)) {
+                insuranceCost = insuranceCost - insuranceCostPercentile*50;
+            }
+            else if ("Adult Woman".equals(lifeInsuranceOptionsOutput)) {
+                insuranceCost = insuranceCost + insuranceCostPercentile*40;
+            }
+            else if ("Adult Man".equals(lifeInsuranceOptionsOutput)) {
+                insuranceCost = insuranceCost + insuranceCostPercentile*23;
+            }
+            String insuranceCostString = String.valueOf(insuranceCost);
+            JOptionPane.showMessageDialog(null, "Your selected insurance plan has a cost of " + insuranceCostString);
+        }
+        else if (o == buttonCarInsurance){
+
+        }
     }
 }
