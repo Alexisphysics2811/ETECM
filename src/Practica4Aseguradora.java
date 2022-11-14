@@ -19,7 +19,7 @@ public class Practica4Aseguradora extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         Practica4Aseguradora demo = new Practica4Aseguradora();
-        demo.setSize(1300, 700);
+        demo.setSize(1200, 700);
         demo.createGUI();
         demo.setTitle("Quanta Insurance");
         demo.setVisible(true);
@@ -70,9 +70,10 @@ public class Practica4Aseguradora extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
-        int insuranceCost = 10000;
-        int insuranceCostPercentile = 100;
+        int insuranceCost = 0;
         if (o == buttonLifeInsurance){
+            insuranceCost = 10000;
+            int insuranceCostPercentile = 100;
             Object[] lifeInsuranceOptions = {"Minor", "Adult Woman", "Adult Man"};
             int lifeInsuranceOptionsIndex = JOptionPane.showOptionDialog(null, "Select the correspondant option: \n Is the interested a ...", "Life Insurance", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, lifeInsuranceOptions, lifeInsuranceOptions[0]);
             String lifeInsuranceOptionsOutput = lifeInsuranceOptions[lifeInsuranceOptionsIndex].toString();
@@ -85,11 +86,33 @@ public class Practica4Aseguradora extends JFrame implements ActionListener {
             else if ("Adult Man".equals(lifeInsuranceOptionsOutput)) {
                 insuranceCost = insuranceCost + insuranceCostPercentile*23;
             }
-            String insuranceCostString = String.valueOf(insuranceCost);
-            JOptionPane.showMessageDialog(null, "Your selected insurance plan has a cost of " + insuranceCostString);
         }
         else if (o == buttonCarInsurance){
-
+            insuranceCost = 4800;
+            int insuranceCostPercentile = 48;
+            String carInsuranceYearStr = JOptionPane.showInputDialog(null, "Input the model year of the vehicle: ");
+            int carInsuranceYear = Integer.parseInt(carInsuranceYearStr);
+            Object[] carInsuranceOptions = {"Limited", "Extended"};
+            int carInsuranceOptionsIndex = JOptionPane.showOptionDialog(null, "Select the type of insurance you want: ", "Car Insurance", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, carInsuranceOptions, carInsuranceOptions[0]);
+            String carInsuranceOptionsOutput = carInsuranceOptions[carInsuranceOptionsIndex].toString();
+            if ("Limited".equals(carInsuranceOptionsOutput)) {
+                if (carInsuranceYear >= 2000) {
+                    insuranceCost = insuranceCost + insuranceCostPercentile*22;
+                }
+                else if (carInsuranceYear < 2000) {
+                    insuranceCost = insuranceCost;
+                }
+            }
+            else if ("Extended".equals(carInsuranceOptionsOutput)) {
+                if (carInsuranceYear >= 2000) {
+                    insuranceCost = insuranceCost + insuranceCostPercentile*120;
+                }
+                else if (carInsuranceYear < 2000) {
+                    insuranceCost = insuranceCost + insuranceCostPercentile*50;
+                }
+            }
         }
+        String insuranceCostString = String.valueOf(insuranceCost);
+        JOptionPane.showMessageDialog(null, "Your selected insurance plan has a cost of " + insuranceCostString);
     }
 }
